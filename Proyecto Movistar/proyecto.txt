@@ -1,0 +1,11 @@
+Realiza una página para MOVISTAR
+la cual tiene que mostrar una barra de navegación
+que te permita conocer sus productos y servicios
+
+la pagina principal debe mostrar de forma muy
+resumida, estos productos o servicios.
+
+El diseño y colores, quedan por parte del estudiante
+puede incluso rediseñar el estilo visual de Movistar
+
+Fecha de entrega: Martes 12/12/23
