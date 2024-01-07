@@ -1,0 +1,50 @@
+$colorH1: #2494AE
+$colorBgL: #CCE5EC
+$colorH2: #A3C0CC
+$colorBG: #F1F2F6
+$colorBor: #6DACBE
+$colorTxt: #002D40
+
+@mixin flex($direction: row, $justify: center, $align: center)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+@mixin txt-bg($color: $colorTxt, $bg-color:$colorBG)
+  color: $color
+  background-color: $bg-color
+@mixin svg-color($stroke: none, $fill: $colorTxt)
+  fill: $fill
+  stroke: $stroke
+@mixin source-scale($height: 16px, $width: 16px)
+  height: $height
+  width: $width
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap')
+
+::-webkit-scrollbar
+  background: transparent
+  width: 5px
+::-webkit-scrollbar-thumb
+  background-color: $colorBor
+  border-radius: 3px
+*
+  margin: 0
+  padding: 0
+  @include txt-bg($colorTxt, transparent)
+  box-sizing: border-box
+  font-family: 'Raleway', sans-serif
+  scroll-behavior: smooth
+body
+  background-color: $colorBG
+li
+  list-style: none
+a
+  text-decoration: none
+h2
+  text-align: center
+  font-size: 12px
+h3
+  font-size: 9px
+p
+  font-size: 8px

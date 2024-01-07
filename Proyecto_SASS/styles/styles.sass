@@ -1,0 +1,93 @@
+@import './_general.sass'
+
+.barra-navegacion
+  @include flex()
+  background-color: $colorBgL
+  border-radius: 0 0 18px 18px
+  position: sticky
+  z-index: 2
+  top: 0
+  ul
+    @include flex(row, space-around)
+    width: 100%
+    a:hover
+      @include txt-bg($colorBG , $colorTxt)
+      border-radius: 10px
+      svg
+        @include svg-color(none, $colorBgL)
+      .carrito
+        @include svg-color($colorBgL, none)
+
+.icono
+  @include flex()
+  padding: 5px 0
+  width: 30px
+  svg
+    @include flex()
+    @include source-scale()
+    @include svg-color()
+  .carrito
+    @include svg-color($colorTxt, none)
+  span
+    display: none
+
+.main
+  @include flex(column)
+  padding: 16px
+.banner
+  @include flex(column)
+  height: 100vh
+  background-image: url("../images/fondo.jpg")
+  background-attachment: fixed
+  background-size: cover
+  background-position: center
+  svg
+    @include svg-color($colorBor, $colorTxt)
+    @include source-scale(64px, 64px)
+  h1
+    text-shadow: 1px 1px  $colorBor
+.producto
+  transition: 1s
+  position: relative
+  padding: 16px
+  border: 2px solid $colorH2
+  border-style: dotted solid
+  border-radius: 12px
+  @include flex(column)
+  @include source-scale(180px, 150px)
+  .presentacion
+    img
+      @include source-scale(120px, 120px)
+  .caracteristicas
+    transform: rotateY(180deg)
+    display: none
+    h3
+      margin-bottom: 5px
+  .boton
+    @include source-scale(fit-content, fit-content )
+    @include flex()
+    transition: 0.2s
+    border: none
+    position: absolute
+    z-index: 1
+    top: 5%
+    right: 5%
+    svg
+      @include flex()
+      @include source-scale(14px, 14px)
+      @include svg-color()
+    #Cerrar-info
+      display: none
+.producto:hover
+  transition: 1s
+  transform: rotateY(180deg)
+  .presentacion
+    display: none
+  .boton
+    left: 5%
+  #Mostrar-info
+    display: none
+  .caracteristicas
+    display: block
+  #Cerrar-info
+    display: block
