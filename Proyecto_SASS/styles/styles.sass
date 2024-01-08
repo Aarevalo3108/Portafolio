@@ -1,39 +1,5 @@
 @import './_general.sass'
 
-.barra-navegacion
-  @include flex()
-  background-color: $colorBgL
-  border-radius: 0 0 18px 18px
-  position: sticky
-  z-index: 2
-  top: 0
-  ul
-    @include flex(row, space-around)
-    width: 100%
-    a:hover
-      @include txt-bg($colorBG , $colorTxt)
-      border-radius: 10px
-      svg
-        @include svg-color(none, $colorBgL)
-      .carrito
-        @include svg-color($colorBgL, none)
-
-.icono
-  @include flex()
-  padding: 5px 0
-  width: 30px
-  svg
-    @include flex()
-    @include source-scale()
-    @include svg-color()
-  .carrito
-    @include svg-color($colorTxt, none)
-  span
-    display: none
-
-.main
-  @include flex(column)
-  padding: 16px
 .banner
   @include flex(column)
   height: 100vh
@@ -46,48 +12,264 @@
     @include source-scale(64px, 64px)
   h1
     text-shadow: 1px 1px  $colorBor
-.producto
-  transition: 1s
-  position: relative
-  padding: 16px
-  border: 2px solid $colorH2
-  border-style: dotted solid
-  border-radius: 12px
-  @include flex(column)
-  @include source-scale(180px, 150px)
-  .presentacion
-    img
-      @include source-scale(120px, 120px)
-  .caracteristicas
-    transform: rotateY(180deg)
-    display: none
-    h3
-      margin-bottom: 5px
-  .boton
-    @include source-scale(fit-content, fit-content )
-    @include flex()
-    transition: 0.2s
-    border: none
-    position: absolute
-    z-index: 1
-    top: 5%
-    right: 5%
-    svg
+
+
+.barra-navegacion
+  @include flex()
+  transition: 0.2s
+  background-color: #cce5eccf
+  border-radius: 0 0 18px 18px
+  position: sticky
+  z-index: 3
+  top: 0
+  ul
+    @include flex(row, space-around)
+    @include source-scale(90%, 100%)
+    .icono
       @include flex()
-      @include source-scale(14px, 14px)
-      @include svg-color()
-    #Cerrar-info
-      display: none
-.producto:hover
-  transition: 1s
-  transform: rotateY(180deg)
-  .presentacion
-    display: none
-  .boton
-    left: 5%
-  #Mostrar-info
-    display: none
-  .caracteristicas
-    display: block
-  #Cerrar-info
-    display: block
+      padding: 5px 0
+      width: 15vw
+      min-width: 30px
+      svg
+        @include flex()
+        @include source-scale(14px,14px)
+        @include svg-color()
+      .carrito
+        @include svg-color($colorTxt, none)
+      span
+        display: none
+    .icono:hover
+      transition: 0.2s
+      @include txt-bg($colorBG , $colorTxt)
+      border-radius: 5px 5px 12px 12px
+      svg
+        @include svg-color(none, $colorBgL)
+      .carrito
+        @include svg-color($colorBgL, none)
+
+.main
+  @include flex(column)
+  row-gap: 25px
+  section
+    padding-top: 40px
+  .productos
+    display: grid
+    gap: 20px
+    row-gap: 20px
+    .producto
+      transition: 1s
+      position: relative
+      padding: 16px
+      border: 2px solid $colorH2
+      border-style: dotted solid
+      border-radius: 12px
+      @include flex(column)
+      @include source-scale(180px, 150px)
+      min-height: 180px
+      min-width: 150px
+      .presentacion
+        @include flex(column)
+        img
+          @include source-scale(120px, 120px)
+        h2
+          font-size: 12px
+      .caracteristicas
+        transform: rotateY(180deg)
+        display: none
+        h3
+          margin-bottom: 5px
+          font-size: 10px
+      .boton
+        @include source-scale(fit-content, fit-content )
+        @include flex()
+        transition: 0.2s
+        border: none
+        position: absolute
+        z-index: 1
+        top: 5%
+        right: 5%
+        svg
+          @include flex()
+          @include source-scale(14px, 14px)
+          @include svg-color()
+        .Cerrar-info
+          display: none
+    .producto:hover
+      transition: 1s
+      transform: rotateY(180deg)
+      .presentacion
+        display: none
+      .boton
+        left: 5%
+      .Mostrar-info
+        display: none
+      .caracteristicas
+        display: block
+      .Cerrar-info
+        display: block
+  .tips
+    @include flex(column)
+    padding: 20px 0
+    h2
+      padding-bottom: 20px
+    .tip
+      border-radius: 20px
+      transition: 0.2s
+      position: relative
+      @include flex(column,center,flex-start)
+      row-gap: 12px
+      padding: 12px
+      height: fit-content
+      min-height: 180px
+      img
+        height: 150px
+        position: absolute
+        opacity: 0
+      h3,p
+        z-index: 2
+      p
+        font-weight: 500
+        font-size: 10px
+    .tip:hover
+      transition: 0.2s
+      background-color: $colorBgL
+      img
+        right: 0
+        opacity: 0.2
+
+.contacto
+  background-image: url('../images/fondo.jpg')
+  background-attachment: fixed
+  background-size: cover
+  background-position: center
+  padding: 40px 0
+  border-radius: 10px 10px 0 0
+  @include flex(column)
+  row-gap: 20px
+  h2
+    text-shadow: 1px 1px  $colorBor
+  ul
+    display: grid
+    gap: 12px
+    row-gap: 12px
+    grid-template-columns: repeat(3,1fr)
+    .social
+      @include flex(column-reverse)
+      span
+        display: none
+      svg
+        @include source-scale(32px,32px)
+    .social:active
+      scale: 0.9
+@media only screen and (min-width: 350px)
+  .barra-navegacion
+    ul
+      .icono
+        width: 50px
+        svg
+          @include source-scale(24px, 24px)
+          
+
+
+@media only screen and (min-width: 424px)
+  .contacto
+    ul
+      grid-template-columns: repeat(5,1fr)
+@media only screen and (min-width: 460px)
+  .banner
+    svg
+      @include source-scale(150px, 150px)
+    h1
+      font-size: 36px
+  .barra-navegacion
+    ul
+      li
+        padding: 0 10px
+      .icono
+        width: 60px
+        svg
+          @include source-scale(30px, 30px)
+  .main
+    h2
+      font-size: 32px
+    .productos
+      grid-template-columns: repeat(2,1fr)
+      .titulo-productos
+        padding: 32px 0
+        grid-column: 1 / 3
+      .producto
+        @include source-scale(234px, 195px)
+        .presentacion
+          row-gap: 5px
+          img
+            @include source-scale(180px, 150px)
+          h2
+            font-size: 14px
+        .caracteristicas
+          h3
+            font-size: 12px
+          p
+            font-size: 12px
+      .boton
+        scale: 1.3
+    .tips
+      h2
+        font-size: 32px
+        padding: 32px 0
+      .tip
+        h3
+          font-size: 24px
+        p
+          font-size: 16px
+  .contacto
+    h2
+      font-size: 32px
+      padding: 32px 0
+    ul
+      .social
+        svg
+          @include source-scale(44px,44px)
+@media only screen and (min-width: 650px)
+  .main
+    .productos
+      grid-template-columns: repeat(3,1fr)
+      .titulo-productos
+        grid-column: 1 / 4
+    .tips
+      .tip
+        width: 100%
+  .contacto
+    ul
+      grid-template-columns: repeat(9,1fr)
+      li
+        .social
+          row-gap: 3px
+          span
+            display: block
+            font-size: 16px
+            font-weight: 500
+            text-shadow: 1px 1px  $colorBor
+          svg
+            @include source-scale(50px, 50px)
+@media only screen and (min-width: 900px)
+  .main
+    .tips
+      .tip
+        @include flex()
+        h3
+          padding-left: 30px
+          width: 40%
+          letter-spacing: 5px
+        p
+          font-size: 18px
+          width: 60%
+        img
+          left: 150px
+  .contacto
+    ul
+      li
+        .social
+          span
+            font-size: 20px
+          svg
+            @include source-scale(64px, 64px)
