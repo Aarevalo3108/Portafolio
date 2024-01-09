@@ -1,12 +1,11 @@
+@import './componentes/_mixins'
 @import './_general.sass'
 
 .banner
+  @include source-scale(100vh)
   @include flex(column)
-  height: 100vh
-  background-image: url("../images/fondo.jpg")
-  background-attachment: fixed
+  background: url("../images/fondo.jpg") fixed center
   background-size: cover
-  background-position: center
   svg
     @include svg-color($colorBor, $colorTxt)
     @include source-scale(64px, 64px)
@@ -15,6 +14,7 @@
 
 
 .barra-navegacion
+  @include source-scale(auto, 100%)
   @include flex()
   transition: 0.2s
   background-color: #cce5eccf
@@ -28,7 +28,7 @@
     .icono
       @include flex()
       padding: 5px 0
-      width: 15vw
+      @include source-scale(auto, 15vw)
       min-width: 30px
       svg
         @include flex()
@@ -46,10 +46,13 @@
         @include svg-color(none, $colorBgL)
       .carrito
         @include svg-color($colorBgL, none)
+      span
+        color: $colorBgL
 
 .main
   @include flex(column)
   row-gap: 25px
+  max-width: 1800px
   section
     padding-top: 40px
   .productos
@@ -77,6 +80,7 @@
         transform: rotateY(180deg)
         display: none
         h3
+          animation: pulso 3s infinite
           margin-bottom: 5px
           font-size: 10px
       .boton
@@ -104,7 +108,7 @@
       .Mostrar-info
         display: none
       .caracteristicas
-        display: block
+        @include flex(column)
       .Cerrar-info
         display: block
   .tips
@@ -119,10 +123,10 @@
       @include flex(column,center,flex-start)
       row-gap: 12px
       padding: 12px
-      height: fit-content
+      @include source-scale(fit-content)
       min-height: 180px
       img
-        height: 150px
+        @include source-scale(150px)
         position: absolute
         opacity: 0
       h3,p
@@ -138,10 +142,8 @@
         opacity: 0.2
 
 .contacto
-  background-image: url('../images/fondo.jpg')
-  background-attachment: fixed
+  background: url('../images/fondo.jpg') fixed center
   background-size: cover
-  background-position: center
   padding: 40px 0
   border-radius: 10px 10px 0 0
   @include flex(column)
@@ -161,115 +163,4 @@
         @include source-scale(32px,32px)
     .social:active
       scale: 0.9
-@media only screen and (min-width: 350px)
-  .barra-navegacion
-    ul
-      .icono
-        width: 50px
-        svg
-          @include source-scale(24px, 24px)
-          
-
-
-@media only screen and (min-width: 424px)
-  .contacto
-    ul
-      grid-template-columns: repeat(5,1fr)
-@media only screen and (min-width: 460px)
-  .banner
-    svg
-      @include source-scale(150px, 150px)
-    h1
-      font-size: 36px
-  .barra-navegacion
-    ul
-      li
-        padding: 0 10px
-      .icono
-        width: 60px
-        svg
-          @include source-scale(30px, 30px)
-  .main
-    h2
-      font-size: 32px
-    .productos
-      grid-template-columns: repeat(2,1fr)
-      .titulo-productos
-        padding: 32px 0
-        grid-column: 1 / 3
-      .producto
-        @include source-scale(234px, 195px)
-        .presentacion
-          row-gap: 5px
-          img
-            @include source-scale(180px, 150px)
-          h2
-            font-size: 14px
-        .caracteristicas
-          h3
-            font-size: 12px
-          p
-            font-size: 12px
-      .boton
-        scale: 1.3
-    .tips
-      h2
-        font-size: 32px
-        padding: 32px 0
-      .tip
-        h3
-          font-size: 24px
-        p
-          font-size: 16px
-  .contacto
-    h2
-      font-size: 32px
-      padding: 32px 0
-    ul
-      .social
-        svg
-          @include source-scale(44px,44px)
-@media only screen and (min-width: 650px)
-  .main
-    .productos
-      grid-template-columns: repeat(3,1fr)
-      .titulo-productos
-        grid-column: 1 / 4
-    .tips
-      .tip
-        width: 100%
-  .contacto
-    ul
-      grid-template-columns: repeat(9,1fr)
-      li
-        .social
-          row-gap: 3px
-          span
-            display: block
-            font-size: 16px
-            font-weight: 500
-            text-shadow: 1px 1px  $colorBor
-          svg
-            @include source-scale(50px, 50px)
-@media only screen and (min-width: 900px)
-  .main
-    .tips
-      .tip
-        @include flex()
-        h3
-          padding-left: 30px
-          width: 40%
-          letter-spacing: 5px
-        p
-          font-size: 18px
-          width: 60%
-        img
-          left: 150px
-  .contacto
-    ul
-      li
-        .social
-          span
-            font-size: 20px
-          svg
-            @include source-scale(64px, 64px)
+@import './componentes/_mediaquerys.sass'

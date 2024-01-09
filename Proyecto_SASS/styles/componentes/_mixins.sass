@@ -1,0 +1,23 @@
+@import './_variables.sass'
+@mixin flex($direction: row, $justify: center, $align: center)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+@mixin txt-bg($color: $colorTxt, $bg-color:$colorBG)
+  color: $color
+  background-color: $bg-color
+@mixin svg-color($stroke: none, $fill: $colorTxt)
+  fill: $fill
+  stroke: $stroke
+@mixin source-scale($height: auto, $width: auto)
+  height: $height
+  width: $width
+@keyframes pulso
+  0%
+    color: $colorTxt
+  50%
+    color: $colorH1
+    scale: 1.05
+  100%
+    color: $colorTxt

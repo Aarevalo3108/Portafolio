@@ -1,0 +1,164 @@
+
+@import './_mixins.sass'
+
+@media only screen and (min-width: 350px)
+  .barra-navegacion
+    ul
+      .icono
+        @include source-scale(auto, 50px)
+        svg
+          @include source-scale(24px, 24px)
+
+
+@media only screen and (min-width: 424px)
+  .contacto
+    ul
+      grid-template-columns: repeat(5,1fr)
+  .main
+    .productos
+      .producto
+        @include source-scale(234px, 195px)
+        .presentacion
+          @include source-scale(180px, 160px)
+          row-gap: 5px
+          h2
+            font-size: 14px
+        .caracteristicas
+          h3
+            font-size: 12px
+          p
+            font-size: 12px
+      .boton
+        scale: 1.3
+@media only screen and (min-width: 460px)
+  .banner
+    svg
+      @include source-scale(150px, 150px)
+    h1
+      font-size: 36px
+  .barra-navegacion
+    ul
+      li
+        padding: 0 10px
+      .icono
+        @include source-scale(auto, 60px)
+        svg
+          @include source-scale(30px, 30px)
+  .main
+    h2
+      font-size: 32px
+    .productos
+      grid-template-columns: repeat(2,1fr)
+      .titulo-productos
+        padding: 32px 0
+        grid-column: 1 / 3
+    .tips
+      h2
+        font-size: 32px
+        padding: 32px 0
+      .tip
+        h3
+          font-size: 24px
+        p
+          font-size: 16px
+  .contacto
+    h2
+      font-size: 32px
+      padding: 32px 0
+    ul
+      .social
+        svg
+          @include source-scale(44px,44px)
+@media only screen and (min-width: 650px)
+  .main
+    .productos
+      grid-template-columns: repeat(3,1fr)
+      .titulo-productos
+        grid-column: 1 / 4
+    .tips
+      .tip
+        @include source-scale(auto, 100%)
+  .contacto
+    ul
+      grid-template-columns: repeat(9,1fr)
+      li
+        .social
+          row-gap: 3px
+          span
+            display: block
+            font-size: 16px
+            font-weight: 500
+            text-shadow: 1px 1px  $colorBor
+          svg
+            @include source-scale(50px, 50px)
+@media only screen and (min-width: 900px)
+  ::-webkit-scrollbar
+    transition: 0.2s
+    @include source-scale(auto, 8px)
+  .barra-navegacion
+    ul
+      li
+        .icono
+          @include source-scale(auto, 120px)
+          span
+            display: block
+            font-size: 16px
+        .icono:hover
+          border-radius: 8px 8px 16px 16px
+  .main
+    .tips
+      .tip
+        @include source-scale(300px)
+        @include flex()
+        h3
+          padding-left: 30px
+          @include source-scale(auto, 40%)
+          letter-spacing: 5px
+        p
+          font-size: 18px
+          @include source-scale(auto, 60%)
+        img
+          left: 150px
+  .contacto
+    ul
+      li
+        .social
+          span
+            font-size: 20px
+          svg
+            @include source-scale(64px, 64px)
+@media only screen and (min-width: 1100px)
+  .main
+    .productos
+      .producto
+        @include source-scale(320px,290px )
+        border-width: 4px
+        .presentacion
+          img
+            @include source-scale(200px,180px)
+          h2
+            padding-top: 20px
+            font-size: 18px
+        .caracteristicas
+          h3
+            font-size: 16px
+            padding-bottom: 10px
+          p
+            font-size: 16px
+@media only screen and (min-width: 1600px)
+  .main
+    .productos
+      gap: 40px
+      row-gap: 40px
+      .producto
+        @include source-scale(396px,330px )
+        .presentacion
+          img
+            @include source-scale(242px,218px)
+          h2
+            font-size: 22px
+        .caracteristicas
+          h3
+            font-size: 18px
+          p
+            font-size: 18px
