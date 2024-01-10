@@ -7,10 +7,12 @@
   background: url("../images/fondo.jpg") fixed center
   background-size: cover
   svg
-    @include svg-color($colorBor, $colorTxt)
-    @include source-scale(6rem, 6rem)
+    @include svg-color($colorTxt, $colorBgL)
+    @include source-scale(8rem, 8rem)
+    filter: drop-shadow(0.2rem 0.2rem 1px $colorTxt)
   h1
-    text-shadow: 1px 1px  $colorBor
+    color: $colorBgL
+    text-shadow: 0.2rem 0.2rem 1px $colorTxt
 
 
 .barra-navegacion
@@ -61,12 +63,12 @@
     .producto
       transition: 1s
       position: relative
-      padding: 16px
+      padding: 2.5rem
       border: 3px solid $colorH2
       border-style: dotted solid
       border-radius: 12px
       @include flex(column)
-      @include source-scale(300px,240px)
+      @include source-scale(330px,260px)
       .presentacion
         @include flex(column)
         img
@@ -119,7 +121,8 @@
       @include flex(column,center,flex-start)
       row-gap: 1rem
       padding: 2.5rem 1.5rem
-      @include source-scale(fit-content)
+      @include source-scale(fit-content, 100%)
+      max-width: 1500px
       img
         @include source-scale(150px)
         position: absolute
@@ -143,7 +146,9 @@
   @include flex(column)
   row-gap: 20px
   h2
-    text-shadow: 1px 1px  $colorBor
+    font-size: 2rem
+    color: $colorBgL
+    text-shadow: 0.2rem 0.2rem 1px $colorTxt
   ul
     display: grid
     gap: 12px
@@ -155,6 +160,7 @@
         display: none
       svg
         @include source-scale(3.2rem,3.2rem)
+        filter: drop-shadow(0.2rem 0.2rem 1px $colorTxt)
     .social:active
       scale: 0.9
 @import './componentes/_mediaquerys.sass'

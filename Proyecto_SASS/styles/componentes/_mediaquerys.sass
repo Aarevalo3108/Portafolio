@@ -1,20 +1,25 @@
 
 @import './_mixins.sass'
 
-@media only screen and (min-width: 350px)
-
-
-@media only screen and (min-width: 424px)
-  .contacto
-    ul
-      grid-template-columns: repeat(5,1fr)
 @media only screen and (min-width: 460px)
   .main
     .productos
       grid-template-columns: repeat(2,1fr)
       .titulo-productos
         grid-column: 1 / 3
-@media only screen and (min-width: 650px)
+@media only screen and (min-width: 600px)
+  .contacto
+    ul
+      grid-template-columns: repeat(5,1fr)
+      li:nth-child(6)
+        grid-column: 1 / 3
+        padding-left: 4rem
+      li:nth-child(8)
+        grid-column: 4 / 6
+        padding-right: 4rem
+      li:last-child
+        grid-column: 1 / 6
+@media only screen and (min-width: 992px)
   .main
     .productos
       grid-template-columns: repeat(3,1fr)
@@ -30,8 +35,12 @@
             display: block
             font-size: 1.5rem
             font-weight: 500
-            text-shadow: 0.2rem 0.2rem  $colorBor
-@media only screen and (min-width: 900px)
+            color: $colorBgL
+            text-shadow: 0.2rem 0.2rem 1px $colorTxt
+      li:nth-child(6),li:nth-child(8),li:last-child
+        grid-column: auto
+        padding: initial
+@media only screen and (min-width: 992px)
   ::-webkit-scrollbar
     transition: 0.2s
     @include source-scale(auto, 0.5rem)

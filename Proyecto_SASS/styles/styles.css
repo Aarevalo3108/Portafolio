@@ -67,7 +67,7 @@ a {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -97,13 +97,15 @@ p {
   background-size: cover;
 }
 .banner svg {
-  fill: #002D40;
-  stroke: #6DACBE;
-  height: 6rem;
-  width: 6rem;
+  fill: #CCE5EC;
+  stroke: #002D40;
+  height: 8rem;
+  width: 8rem;
+  filter: drop-shadow(0.2rem 0.2rem 1px #002D40);
 }
 .banner h1 {
-  text-shadow: 1px 1px #6DACBE;
+  color: #CCE5EC;
+  text-shadow: 0.2rem 0.2rem 1px #002D40;
 }
 
 .barra-navegacion {
@@ -188,7 +190,7 @@ p {
 .main .productos .producto {
   transition: 1s;
   position: relative;
-  padding: 16px;
+  padding: 2.5rem;
   border: 3px solid #A3C0CC;
   border-style: dotted solid;
   border-radius: 12px;
@@ -196,8 +198,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  width: 240px;
+  height: 330px;
+  width: 260px;
 }
 .main .productos .producto .presentacion {
   display: flex;
@@ -293,7 +295,8 @@ p {
   padding: 2.5rem 1.5rem;
   height: -moz-fit-content;
   height: fit-content;
-  width: auto;
+  width: 100%;
+  max-width: 1500px;
 }
 .main .tips .tip img {
   height: 150px;
@@ -328,7 +331,9 @@ p {
   row-gap: 20px;
 }
 .contacto h2 {
-  text-shadow: 1px 1px #6DACBE;
+  font-size: 2rem;
+  color: #CCE5EC;
+  text-shadow: 0.2rem 0.2rem 1px #002D40;
 }
 .contacto ul {
   display: grid;
@@ -348,6 +353,7 @@ p {
 .contacto ul .social svg {
   height: 3.2rem;
   width: 3.2rem;
+  filter: drop-shadow(0.2rem 0.2rem 1px #002D40);
 }
 .contacto ul .social:active {
   scale: 0.9;
@@ -365,11 +371,6 @@ p {
     color: #002D40;
   }
 }
-@media only screen and (min-width: 424px) {
-  .contacto ul {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
 @media only screen and (min-width: 460px) {
   .main .productos {
     grid-template-columns: repeat(2, 1fr);
@@ -378,7 +379,23 @@ p {
     grid-column: 1/3;
   }
 }
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 600px) {
+  .contacto ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .contacto ul li:nth-child(6) {
+    grid-column: 1/3;
+    padding-left: 4rem;
+  }
+  .contacto ul li:nth-child(8) {
+    grid-column: 4/6;
+    padding-right: 4rem;
+  }
+  .contacto ul li:last-child {
+    grid-column: 1/6;
+  }
+}
+@media only screen and (min-width: 992px) {
   .main .productos {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -395,10 +412,15 @@ p {
     display: block;
     font-size: 1.5rem;
     font-weight: 500;
-    text-shadow: 0.2rem 0.2rem #6DACBE;
+    color: #CCE5EC;
+    text-shadow: 0.2rem 0.2rem 1px #002D40;
+  }
+  .contacto ul li:nth-child(6), .contacto ul li:nth-child(8), .contacto ul li:last-child {
+    grid-column: auto;
+    padding: initial;
   }
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 992px) {
   ::-webkit-scrollbar {
     -webkit-transition: 0.2s;
     transition: 0.2s;
