@@ -79,10 +79,12 @@ h3 {
 }
 
 h4 {
+  transition: 1s;
   font-size: 1rem;
 }
 
 p {
+  transition: 1s;
   font-size: 0.85rem;
 }
 
@@ -126,7 +128,7 @@ p {
 }
 .barra-navegacion ul .icono {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   height: 3rem;
@@ -180,6 +182,7 @@ p {
   padding-top: 40px;
 }
 .main .productos {
+  padding: 1rem;
   display: grid;
   gap: 2rem;
   row-gap: 2rem;
@@ -208,8 +211,9 @@ p {
   align-items: center;
 }
 .main .productos .producto .presentacion img {
-  height: 190px;
-  width: 180px;
+  transition: 1s;
+  height: 170px;
+  width: 170px;
 }
 .main .productos .producto .presentacion h3 {
   text-align: center;
@@ -244,8 +248,8 @@ p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.4rem;
+  width: 1.4rem;
   fill: #002D40;
   stroke: none;
 }
@@ -372,14 +376,20 @@ p {
   }
 }
 @media only screen and (min-width: 460px) {
-  .main .productos {
-    grid-template-columns: repeat(2, 1fr);
+  h4 {
+    font-size: 1.1rem;
   }
-  .main .productos .titulo-productos {
-    grid-column: 1/3;
+  p {
+    font-size: 1rem;
   }
-}
-@media only screen and (min-width: 600px) {
+  .main .productos .producto {
+    height: 400px;
+    width: 330px;
+  }
+  .main .productos .producto .presentacion img {
+    height: 200px;
+    width: 200px;
+  }
   .contacto ul {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -395,12 +405,98 @@ p {
     grid-column: 1/6;
   }
 }
+@media only screen and (min-width: 600px) {
+  h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+  .main .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main .productos .producto {
+    height: 330px;
+    width: 260px;
+  }
+  .main .productos .producto .presentacion img {
+    height: 170px;
+    width: 170px;
+  }
+  .main .productos .titulo-productos {
+    grid-column: 1/3;
+  }
+}
+@media only screen and (min-width: 800px) {
+  h4 {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .main .productos .producto {
+    height: 400px;
+    width: 330px;
+  }
+  .main .productos .producto .presentacion img {
+    height: 200px;
+    width: 200px;
+  }
+}
 @media only screen and (min-width: 992px) {
+  h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+  ::-webkit-scrollbar {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    height: auto;
+    width: 0.5rem;
+  }
+  .barra-navegacion ul li .icono {
+    height: 3rem;
+    width: 8rem;
+    gap: 0.5rem;
+  }
+  .barra-navegacion ul li .icono span {
+    display: block;
+    font-size: 1rem;
+  }
+  .barra-navegacion ul li .icono svg {
+    height: 2rem;
+    width: 2rem;
+  }
   .main .productos {
     grid-template-columns: repeat(3, 1fr);
   }
   .main .productos .titulo-productos {
     grid-column: 1/4;
+  }
+  .main .productos .producto {
+    height: 330px;
+    width: 260px;
+  }
+  .main .productos .producto .presentacion img {
+    height: 170px;
+    width: 170px;
+  }
+  .main .tips .tip {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main .tips .tip .h3 {
+    padding-left: 2rem;
+  }
+  .main .tips .tip .p {
+    max-width: 50%;
+  }
+  .main .tips .tip img {
+    left: 30%;
   }
   .contacto ul {
     grid-template-columns: repeat(9, 1fr);
@@ -420,35 +516,19 @@ p {
     padding: initial;
   }
 }
-@media only screen and (min-width: 992px) {
-  ::-webkit-scrollbar {
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-    height: auto;
-    width: 0.5rem;
-  }
-  .barra-navegacion ul li .icono {
-    height: 3rem;
-    width: 8rem;
-    gap: 0.5rem;
-  }
-  .barra-navegacion ul li .icono span {
-    display: block;
+@media only screen and (min-width: 1200px) {
+  p {
     font-size: 1rem;
   }
-  .main .tips .tip {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  h4 {
+    font-size: 1.1rem;
   }
-  .main .tips .tip .h3 {
-    padding-left: 2rem;
+  .main .productos .producto {
+    height: 400px;
+    width: 330px;
   }
-  .main .tips .tip .p {
-    max-width: 50%;
-  }
-  .main .tips .tip img {
-    left: 30%;
+  .main .productos .producto .presentacion img {
+    height: 200px;
+    width: 200px;
   }
 }/*# sourceMappingURL=styles.css.map */

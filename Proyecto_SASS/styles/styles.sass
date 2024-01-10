@@ -26,7 +26,7 @@
   ul
     @include flex(row, space-around)
     .icono
-      @include flex()
+      @include flex(row-reverse)
       @include source-scale(3rem, 3rem)
       min-width: 30px
       svg
@@ -55,6 +55,7 @@
   section
     padding-top: 40px
   .productos
+    padding: 1rem
     display: grid
     gap: 2rem
     row-gap: 2rem
@@ -72,7 +73,8 @@
       .presentacion
         @include flex(column)
         img
-          @include source-scale(190px, 180px)
+          transition: 1s
+          @include source-scale(170px, 170px)
         h3
           text-align: center
           margin-top: 1rem
@@ -93,7 +95,7 @@
         right: 5%
         svg
           @include flex()
-          @include source-scale(1.5rem, 1.5rem)
+          @include source-scale(1.4rem, 1.4rem)
           @include svg-color()
         .Cerrar-info
           display: none
