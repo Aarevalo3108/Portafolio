@@ -1,3 +1,14 @@
+html{
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+  background-color: #f3f4f61c;
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 0.5rem;
+  background-color: #f3f4f644;
+}
 .glowing {
   position: relative;
   min-width: 800px;
