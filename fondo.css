@@ -4,7 +4,7 @@
   height: 550px;
   margin-left: -150px;
   transform-origin: right;
-  animation: colorChange 20s linear infinite;
+  animation: colorChange 15s linear infinite;
 }
 .glowing:nth-child(even) {
   transform-origin: left;
@@ -68,15 +68,15 @@
 }
 
 .glowing span:nth-child(3n + 1) {
-  animation: animate 40s alternate infinite;
+  animation: animate 30s alternate infinite;
 }
 
 .glowing span:nth-child(3n + 2) {
-  animation: animate-reverse 12s alternate infinite;
+  animation: animate-reverse 9s alternate infinite;
 }
 
 .glowing span:nth-child(3n + 3) {
-  animation: animate 32s alternate infinite;
+  animation: animate 24s alternate infinite;
 }
 
 @keyframes animate {
@@ -95,11 +95,9 @@
   0% {
     transform: rotate(360deg);
   }
-  
   50% {
     transform: rotate(180deg);
   }
-  
   100% {
     transform: rotate(0deg);
   }
