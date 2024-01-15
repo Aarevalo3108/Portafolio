@@ -1,6 +1,19 @@
 html{
   scroll-behavior: smooth;
 }
+.Angel{
+  filter: drop-shadow(1px 1px #ffffff91) drop-shadow(-1px -1px #ffffff91) drop-shadow(-1px 1px #ffffff91) drop-shadow(1px -1px #ffffff91);
+}
+
+@media (min-width:768px){
+  .navegacion{
+    grid-column: 2 / 3;
+  }
+  .descripcion{
+    grid-column: 1 / 2;
+    grid-row: 3;
+  }
+}
 ::-webkit-scrollbar{
   background-color: #f3f4f61c;
   width: 0.5rem;
